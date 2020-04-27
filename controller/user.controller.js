@@ -1,6 +1,7 @@
 var db = require('../db.js');
 var shortId = require('shortid');
 
+
 module.exports.index = (req,res) => {
   res.render('users/index',{
     users: db.get('users').value()
@@ -18,7 +19,7 @@ module.exports.search = (req,res) => {
   })
 };
 
-module.exports.create = (req,res) => {
+module.exports.create = (req,res) => {  
   res.render('users/create');
 };
 
@@ -33,7 +34,7 @@ module.exports.getId = (req,res) => {
 
 module.exports.postCreate =  (req,res) => {
   req.body.id = shortId.generate(); // generate unique id
-  
+
   db.get('users').push(req.body).write();
   res.redirect('/users');
 };
