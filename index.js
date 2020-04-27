@@ -9,13 +9,14 @@ var authMiddleware = require('./middleware/auth.middleware');
 
 var app = express();
 var port = 3000;
+var random = Math.random().toString(36).substring(7);
 
 app.set('view engine', 'pug');
 app.set('views', './views');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(cookieParser());
+app.use(cookieParser(random));
 
 app.use(express.static('public'));
 
