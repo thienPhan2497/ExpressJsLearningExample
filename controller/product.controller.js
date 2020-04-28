@@ -5,7 +5,7 @@ module.exports.index = (req,res,next) =>{
   var perPage = 8;
   var start = (page - 1) * perPage;
   var end = page * perPage;
-
+ 
   var drop = (page - 1) * perPage
 
   res.render('products/index',{
