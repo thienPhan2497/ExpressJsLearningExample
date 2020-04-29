@@ -260,5 +260,14 @@
       "description": "nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget",
       "price": "$3.27"
     }
+  ],
+  "sessions": [
+    {
+      "id": "2sGlh5FNY",
+      "cart": {
+        "1afec7e5-e15c-4d9a-8d8e-631077c8321f": 2,
+        "c4ed6f8a-6f33-43f3-af2b-dcdb65287443": 1
+      }
+    }
   ]
 }
