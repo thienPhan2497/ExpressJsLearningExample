@@ -4,6 +4,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var csurf = require('csurf');
+var mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URL);
 
 var userRoute = require('./routes/user.route');
 var authRoute = require('./routes/auth.route');
@@ -33,6 +36,9 @@ app.get('/', (req,res) => {
   res.render('index', {
     name: 'AAA'
   });
+  res.statusCode = 200;
+  res.setHeader('Content-Type','text/plain');
+  res.end('This is the main page');
 });
 
 app.use('/users', authMiddleware.requireAuth, userRoute);
